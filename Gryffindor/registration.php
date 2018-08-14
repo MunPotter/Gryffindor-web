@@ -1,3 +1,65 @@
+<?php
+
+require('verify.php');
+//$data=NULL;
+$output;
+if(isset($_POST["button"])) {
+	$data = array(
+	'dateOfBirth' => $_POST["dateOfBirth"],
+    'email' => $_POST["email"],
+    'gender' => $_POST["gender"],
+    'password' => $_POST["password"],
+    'status'=> 'pending',
+    'type' => $_POST["type"],
+    'username' => $_POST["username"],);
+
+  $output = json_decode(getServerResponse($data,'http://159.65.77.215:8080/gryffindor/api/user/create'));
+ 
+  if($output->{'success'}=='true'){
+    
+    
+    echo '<script>';
+        echo 'var timer = setTimeout(function() {';
+        echo ' window.location="login.php"';
+        echo '}, 1)';
+    echo '</script>';  
+  //}
+  }
+  else {
+    echo 'login failed. You will be redirected to reg page'; 
+    echo '<script>';
+        echo 'var timer = setTimeout(function() {';
+        echo ' window.location="registration.php"';
+        echo '}, 1)';
+    echo '</script>';  
+  }
+}
+
+	
+	/*echo (getServerResponse($data,'http://159.65.77.215:8080/gryffindor/api/user/create'));
+  echo $output;
+	if($output['success']=='true'){
+		
+		echo 'reg successful';
+    echo '<script>';
+        echo 'var timer = setTimeout(function() {';
+        echo ' window.location="login.php"';
+        echo '}, 1)';
+    echo '</script>'; 
+	}
+	else {
+		echo 'reg failed. You will be redirected to reg page'; 
+		 echo '<script>';
+        echo 'var timer = setTimeout(function() {';
+        echo ' window.location="registration.php"';
+        echo '}, 1)';
+		echo '</script>';  
+	}
+}*/
+
+else {
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -48,7 +110,7 @@
             
 <div class="container">
 
-  <form class="form-horizontal" method="POST" action="login.php">
+  <form class="form-horizontal" method="POST" action="">
   <fieldset>
     <span class="login100-form-title p-b-32">
             Registration Form
@@ -130,7 +192,7 @@
     <div class="form-group">
       <div class="col-lg-6 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name ="button" class="btn btn-primary">Submit</button>
       </div>
       <div>
               <a href="login.php" class="txt3">
@@ -176,3 +238,8 @@
   <script type="text/javascript"scr="{{url('js/jquery-ui.js')}}"></script>
 </body>
 </html>
+<?php
+
+}
+
+?>

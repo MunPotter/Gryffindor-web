@@ -1,3 +1,42 @@
+<?php
+
+require('verify.php');
+//$data=NULL;
+$output;
+if(isset($_POST["button"])) {
+	$data = array(
+	
+    'password' => $_POST["pass"],
+    'username' => $_POST["username"],);
+	
+	$output = json_decode(getServerResponse($data,'http://159.65.77.215:8080/gryffindor/api/user/login'));
+ 
+	if($output->{'success'}=='true'){
+		
+		
+		echo '<script>';
+        echo 'var timer = setTimeout(function() {';
+        echo ' window.location="stdhome.html"';
+        echo '}, 1)';
+		echo '</script>';  
+	//}
+	}
+	else {
+		echo 'login failed. You will be redirected to reg page'; 
+		echo '<script>';
+        echo 'var timer = setTimeout(function() {';
+        echo ' window.location="login.php"';
+        echo '}, 1)';
+		echo '</script>';  
+	}
+}
+
+else {
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +71,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w"  method="POST" action="stdhome.html">
+				<form class="login100-form validate-form flex-sb flex-w"  method="POST" action="">
 					
 					<span class="login100-form-title p-b-32">
 						Account Login
@@ -69,7 +108,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type= "submit" name= "button" class="login100-form-btn">
 							Login
 						</button>
 					</div>
@@ -109,3 +148,8 @@
 
 </body>
 </html>
+<?php
+
+}
+
+?>
