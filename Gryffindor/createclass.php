@@ -5,22 +5,26 @@ require('verify.php');
 $output;
 if(isset($_POST["button"])) {
 	$data = array(
-	'dateOfBirth' => $_POST["dateOfBirth"],
-    'email' => $_POST["email"],
-    'gender' => $_POST["gender"],
-    'password' => $_POST["password"],
-    'status'=> 'pending',
-    'type' => $_POST["type"],
-    'username' => $_POST["username"],);
+	//'dateOfBirth' => $_POST["dateOfBirth"],
+    //'email' => $_POST["email"],
+    //'gender' => $_POST["gender"],
+    //'password' => $_POST["password"],
+    //'status'=> 'pending',
+    //'type' => $_POST["type"],
+    'classUsername' => $_POST["classUsername"],
+    'creatorName' => $_POST["creatorName"],
+    'details' => $_POST["details"],
+    'invitation_code' => $_POST["invitation_code"],
+    'name' => $_POST["name"],);
 
-  $output = json_decode(getServerResponse($data,'http://159.65.77.215:8080/gryffindor/api/user/create'));
+  $output = json_decode(getServerResponse($data,'http://159.65.77.215:8080/gryffindor/api/classroom/create'));
  
   if($output->{'success'}=='true'){
     
     
     echo '<script>';
         echo 'var timer = setTimeout(function() {';
-        echo ' window.location="pendinguser.php"';
+        echo ' window.location="teacherhome.php"';
         echo '}, 1)';
     echo '</script>';  
   //}
@@ -29,7 +33,7 @@ if(isset($_POST["button"])) {
     echo 'login failed. You will be redirected to reg page'; 
     echo '<script>';
         echo 'var timer = setTimeout(function() {';
-        echo ' window.location="registration.php"';
+        echo ' window.location="createclass.php"';
         echo '}, 1)';
     echo '</script>';  
   }
@@ -113,92 +117,71 @@ else {
   <form class="form-horizontal" method="POST" action="">
   <fieldset>
     <span class="login100-form-title p-b-32">
-            Registration Form
+            Create Class
           </span>
 
     <div class="form-group">
-      <label for="inputUserName" class="col-lg-2 control-label">UserName</label>
+      <label for="inputUserName" class="col-lg-2 control-label">User Name</label>
 
       <div class="col-lg-6">
-        <input type="text" name="username" class="form-control" id="inputUserName" placeholder="UserName">
+        <input type="text" name="classUsername" class="form-control" id="inputUserName" placeholder="Enter Class User Name">
       
        </div>
     </div>
-        <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+
+      
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Creator Name</label>
       <div class="col-lg-6">
-        <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email">
+        <input type="text" name="creatorName" class="form-control" id="inputPassword" placeholder="Enter creator Name">
+       
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+
+     <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">details</label>
       <div class="col-lg-6">
-        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+        <input type="text" name="details" class="form-control" id="inputPassword" placeholder="Enter creator Name">
        
       </div>
     </div>
-    <div class="form-group">
-      <label for="inputConfirm Password" class="col-lg-2 control-label">Confirm Password</label>
+
+<div class="form-group">
+      <label for="inputUserName" class="col-lg-2 control-label">code</label>
+
       <div class="col-lg-6">
-        <input type="password" name="passconf" class="form-control" id="inputPassword" placeholder="Confirm Password">
-       
-      </div>
+        <input type="text" name="invitation_code" class="form-control" id="inputUserName" placeholder="Enter code">
+      
+       </div>
     </div>
+
     <div class="form-group">
-      <label for="inputDate of Birth" class="col-lg-2 control-label">Date of Birth</label>
+      <label for="inputUserName" class="col-lg-2 control-label">Class Name</label>
+
       <div class="col-lg-6">
-        <input type="text" name="dateOfBirth" class="form-control"  id="datepicker" placeholder="dd-mm-yy">
-       
-      </div>
+        <input type="text" name="name" class="form-control" id="inputUserName" placeholder="Enter Class User Name">
+      
+       </div>
     </div>
+
+
+
+
+
+
+
 
     
-    <div class="form-group">
-      <label class="col-lg-2 control-label">Gender</label>
-      <div class="col-lg-6">
-        <div class="radio">
-          <label>
-            <input type="radio" name="gender" id="optionsRadios1" value="Male" >
-            Male
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="gender" id="optionsRadios2" value="Female">
-           Female
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-lg-2 control-label">Type</label>
-      <div class="col-lg-6">
-        <div class="radio">
-          <label>
-            <input type="radio" name="type" id="optionsRadios1" value="Student" >
-            Student
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="type" id="optionsRadios2" value="Teacher">
-           Teacher
-          </label>
-        </div>
-      </div>
-    </div>
 
     <div class="form-group">
       <div class="col-lg-6 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
         <button type="submit" name ="button" class="btn btn-primary">Submit</button>
       </div>
-      <div>
-              <a href="login.php" class="txt3">
-                Already have an account? 
-              </a>
-            </div>
+      
+      
     </div>
   </fieldset>
 </form>

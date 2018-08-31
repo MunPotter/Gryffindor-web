@@ -109,6 +109,36 @@
 	</nav>
 	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 	
+	<!-- Sidenav -->
+	
+	<div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Join class &emsp; &emsp; &#43;</a>
+      <a href="#">Teacher</a>
+      <a href="#">About</a>
+      <a href="#">settings</a>
+      <a href="#">Share</a>
+    </div>
+    
+	<div class="container">
+	    <span style="color:black;font-size:35px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+	</div>
+	
+	<script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+	
+	<!-- end Sidenav -->
+	
+
+
+
 	
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">

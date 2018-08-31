@@ -1,14 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>	GRYFFINDOR E learning</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free " />
 	<meta name="keywords" content="free " />
 	<meta name="author" content="free" />
-	
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -23,6 +22,9 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+	
+	<!-- Sidenav css -->
+	<link rel="stylesheet" href="css/sidenav.css">
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -68,10 +70,10 @@
 						<p class="site"></p>
 						<p class="num"></p>
 						<ul class="fh5co-social">
-							<li><a href="#"><i class="icon-facebook2"></i></a></li>
-							<li><a href="#"><i class="icon-twitter2"></i></a></li>
+							<li><a href="https://www.facebook.com"><i class="icon-facebook2"></i></a></li>
+							<li><a href="ttps://twitter.com"><i class="icon-twitter2"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
+							<li><a href="https://github.com"><i class="icon-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -81,26 +83,31 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>GRYFFINDOR Education<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="stdhome2.php"><i class="icon-study"></i>GRYFFINDOR Education<span>.</span></a></div>
 					</div>
+					
+				
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
+							<!--
 							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="courses.html">Courses</a></li>
-							<li><a href="teacher.html">Teacher</a></li>
+							<li><a href="courses.html">Courses</a></li>
+							<li class="active"><a href="teacher.html">Teacher</a></li>
 							<li><a href="about.html">About</a></li>
 							
 							<li class="has-dropdown">
 								<a href="blog.html">Blog</a>
 								<ul class="dropdown">
-									<li><a href="php.html">php</a></li>
-									<li><a href="c.html">c</a></li>
-									<li><a href="java.html">java</a></li>
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">eCommerce</a></li>
+									<li><a href="#">Branding</a></li>
+									<li><a href="#">API</a></li>
 								</ul>
 							</li>
 							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="login.php"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+							-->
+							<li class="btn-cta"><a href="login.php"><span>Logout</span></a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -108,32 +115,53 @@
 			</div>
 		</div>
 	</nav>
+	<!-- <span class="glyphicon glyphicon-search" aria-hidden="true"></span> -->
 	
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-		   	<li style="background-image: url(images/pic2.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Our Course</h1>
-									<h2>designed by gryffindor web team</h2>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
-	</aside>
+	<!-- Sidenav -->
+	
+	<div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+      <a href="joinclass.php"><span  class="glyphicon glyphicon-plus"></span>Join class</a>
+      <a href="https://www.youtube.com/webcam"><span  class="glyphicon glyphicon-plus"></span>join live class</a>
+      <a href="https://www.youtube.com"><span  class="glyphicon glyphicon-expand"></span>video</a>
+      <a href="https://www.facebook.com"><span  class="glyphicon glyphicon-share"></span> share</a>
+      <a href="#"><span  class="glyphicon glyphicon-cog"></span> setting</a>
+      
+    </div>
+    
+	<div class="container">
+	    <span style="color:black;font-size:35px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+	</div>
+	
+	<script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+	
+	<!-- end Sidenav -->
+	
+	
+	<!-- Content -->
+	
+	
 	<div id="fh5co-course">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Our Course</h2>
+					<h2>My Course</h2>
 					<p></p>
 				</div>
 			</div>
@@ -145,7 +173,7 @@
 						<div class="desc">
 							<h3><a href="#">1st course</a></h3>
 							<p></p>
-							<span><a href="login.php" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							
 						</div>
 					</div>
 				</div>
@@ -156,7 +184,7 @@
 						<div class="desc">
 							<h3><a href="#">2nd course</a></h3>
 							<p></p>
-							<span><a href="login.php" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							
 						</div>
 					</div>
 				</div>
@@ -167,7 +195,7 @@
 						<div class="desc">
 							<h3><a href="#">3rd course</a></h3>
 							<p></p>
-							<span><a href="login.php" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							
 						</div>
 					</div>
 				</div>
@@ -178,7 +206,7 @@
 						<div class="desc">
 							<h3><a href="#">4th course</a></h3>
 							<p></p>
-							<span><a href="login.php" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							
 						</div>
 					</div>
 				</div>
@@ -186,20 +214,9 @@
 		</div>
 	</div>
 
-
-	<div id="fh5co-register" style="background-image: url(images/h1.jpg);">
-		<div class="overlay"></div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 animate-box">
-				<div class="date-counter text-center">
-					<h2>Get 100 of Online Courses for Free</h2>
-					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="registration.php" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+	
+	<!-- end Content -->
+	
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
@@ -207,7 +224,7 @@
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
 					<h3>About Education</h3>
-					<p></p>
+					<p>.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>
@@ -314,4 +331,3 @@
 	</script>
 	</body>
 </html>
-
